@@ -144,3 +144,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Show mouse clicks in screen recordings
 defaults write com.apple.QuickTimePlayerX MGScreenRecordingDocumentShowMouseClicksUserDefaultsKey -bool true
+
+
+# Disable 2-finger swipe between pages
+# This prevents accidental navigation while horizontal scrolling on the web
+
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
