@@ -150,3 +150,7 @@ defaults write com.apple.QuickTimePlayerX MGScreenRecordingDocumentShowMouseClic
 # This prevents accidental navigation while horizontal scrolling on the web
 
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
+
+# Enable full keyboard access for all controls (System Preferences → Keyboard → Keyboard Shortcuts)
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
