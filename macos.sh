@@ -170,7 +170,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
 defaults write com.apple.menuextra.clock IsAnalog -bool false
 
 # Show date and time in the menu bar
-defaults write com.apple.menuextra.clock "DateFormat" "EEE d MMM HH:mm:ss"
+defaults write com.apple.menuextra.clock "DateFormat" "EEE d MMM hh:mm:ss a"
 
 # Don't flash time and date separators
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
