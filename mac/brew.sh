@@ -36,7 +36,7 @@ brew upgrade
 brew tap caskroom/cask
 
 ## Apps I use
-brew cask install 1password
+# brew cask install 1password # need beta
 # brew cask install brave
 brew cask install evernote
 brew cask install figma
@@ -51,9 +51,18 @@ brew cask install slack
 # brew cask install sourcetree
 brew cask install spotify
 brew cask install teamviewer
+bew cask install qlmarkdown
+bew cask install quicklook-csv
+bew cask install quicklook-json
+
 # brew cask install visual-studio-code
 # cryptomator
 # bettertouchtool
+# appCleaner
+# Amphtemine
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
+mas "Amphetamine", id: 937984704
