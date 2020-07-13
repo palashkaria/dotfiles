@@ -1,7 +1,15 @@
 
+# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
 
-# Disable 
-parency in the menu bar and elsewhere on Yosemite
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "Palash's Macbook"
+sudo scutil --set HostName "Palash's Macbook"
+sudo scutil --set LocalHostName "palash-macbook"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Palash's Macbook"
+
+
+# Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Visualize CPU history in the Activity Monitor Dock icon
@@ -16,6 +24,9 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # to revert, use this
 # defaults delete -g AppleHighlightColor
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
+
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -90,7 +101,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-# Save screenshots to the desktop
+# Save screenshots to the desktop/Screenshots
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -132,12 +143,16 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
+# Privacy: don’t send search queries to Apple
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
 
 # Enable the Develop menu and the Web Inspector in Safari
@@ -151,7 +166,6 @@ defaults write com.apple.QuickTimePlayerX MGScreenRecordingDocumentShowMouseClic
 
 # Disable 2-finger swipe between pages
 # This prevents accidental navigation while horizontal scrolling on the web
-
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Enable full keyboard access for all controls (System Preferences → Keyboard → Keyboard Shortcuts)
@@ -175,3 +189,48 @@ defaults write com.apple.menuextra.clock "DateFormat" "EEE d MMM hh:mm:ss a"
 # Don't flash time and date separators
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
 
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Sleep the display after 3 minutes
+sudo pmset -a displaysleep 3
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Enable subpixel font rendering on non-Apple LCDs
+# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+
+# Add iOS & Watch Simulator to Launchpad
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
+
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+for app in "Activity Monitor" \
+	"Address Book" \
+	"Calendar" \
+	"cfprefsd" \
+	"Contacts" \
+	"Dock" \
+	"Finder" \
+	"Google Chrome Canary" \
+	"Google Chrome" \
+	"Safari" \
+	"SystemUIServer"; do
+	killall "${app}" &> /dev/null
+done
