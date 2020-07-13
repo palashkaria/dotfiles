@@ -52,6 +52,8 @@ brew cask install slack
 brew cask install spotify
 brew cask install teamviewer
 # brew cask install visual-studio-code
+# cryptomator
+# bettertouchtool
 
 # Remove outdated versions from the cellar.
 brew cleanup
