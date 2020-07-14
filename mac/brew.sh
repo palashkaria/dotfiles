@@ -50,6 +50,7 @@ brew cask install homebrew/cask-versions/google-chrome-canary # Chrome Canary
 brew cask install kap
 brew cask install keycastr
 brew cask install microsoft-edge
+brew cask install mullvadvpn
 brew cask install postman
 brew cask install sketch
 brew cask install spotify
@@ -57,6 +58,8 @@ brew cask install teamviewer
 brew cask install qlmarkdown
 brew cask install quicklook-csv
 brew cask install quicklook-json
+brew cask install vlc
+brew cask install virtualbox
 # Remove outdated versions from the cellar.
 brew cleanup
 
