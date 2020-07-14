@@ -17,14 +17,10 @@ fi
 sudo softwareupdate -i -a
 
 # Install Homebrew
+
 echo "Installing Homebrew..."
-brew --version
-if [[ $? -ne 0 ]]; then
-    # Clean-up failed Homebrew install
-    rm -rf "$(brew --prefix)/Cellar" "$(brew --prefix)/.git"
-    # Install Homebrew
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-fi
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 
 # Make sure we’re using the latest Homebrew.
 brew update
