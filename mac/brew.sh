@@ -61,7 +61,8 @@ brew cleanup
 
 
 # App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
-mas "Amphetamine", id: 937984704
+mas install 937984704 #Amphetamine
+mas install 409183694 #Keynote
 
 
 # brew cask install 1password # need bea
