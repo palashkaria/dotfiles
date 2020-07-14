@@ -1,7 +1,7 @@
 
 ## Browser etensions I need 
  - [1Password X Beta](https://chrome.google.com/webstore/detail/1password-x-beta-%E2%80%93-passwo/khgocmkkpikpnmmkgmdnfckapcdkgfaf?hl=en)
- - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en
+ - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
  - [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en)
  - [Roam Highlighter](https://chrome.google.com/webstore/detail/roam-highlighter/hponfflfgcjikmehlcdcnpapicnljkkc?hl=en)
  - [Memex](https://chrome.google.com/webstore/detail/worldbrains-memex/abkfbakhjpmblaafnpgjppbmioombali?hl=en)
