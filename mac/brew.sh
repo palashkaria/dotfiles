@@ -41,6 +41,7 @@ brew cask install android-studio
 brew cask install anybar
 brew cask install appcleaner
 brew cask install cryptomator
+brew cask install docker
 brew cask install evernote
 brew cask install figma
 
