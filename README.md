@@ -1,4 +1,6 @@
 
+Shallow Backup: https://github.com/alichtman/shallow-backup
+
 ## Browser etensions I need 
  - [1Password X Beta](https://chrome.google.com/webstore/detail/1password-x-beta-%E2%80%93-passwo/khgocmkkpikpnmmkgmdnfckapcdkgfaf?hl=en)
  - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
