@@ -31,6 +31,10 @@ brew upgrade
 # Installs Casks
 brew tap caskroom/cask
 
+# the 'j' command
+# https://github.com/wting/autojump
+brew install autojump
+
 ## Apps I use
 
 brew cask install android-studio 
@@ -63,6 +67,7 @@ brew cleanup
 # App to keep mac awake (https://itunes.apple.com/pt/app/amphetamine/id937984704?mt=12)
 mas install 937984704 #Amphetamine
 mas install 409183694 #Keynote
+mas install 682658836 # GarageBand
 
 
 # brew cask install 1password # need bea
